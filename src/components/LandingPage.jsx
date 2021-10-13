@@ -13,11 +13,11 @@ import { Link } from 'react-router-dom';
 
 
 
-export default () => {
+export const LandingPage = () => {
 
 
     return (
-    <>
+    <div className="landing-page">
         <h1 className="title">The Hyrule<br/>Compendium</h1>
         <Canvas>
             <Suspense fallback={null}>
@@ -46,8 +46,10 @@ export default () => {
             />
             {Array(2500).fill().map((element, index) => <Stars key={index} />)}
         </Canvas>
-        <button className="enter-button">Enter</button>
-        {/* <Link to="/Home"><button className="enter-button">Enter</button></Link> */}
-    </>
+        {/* <button className="enter-button">Enter</button> */}
+        <div className="enter-button-container">
+            <Link to="/Home"><button className='enter-button'>Enter</button></Link>
+        </div>
+    </div>
     );
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import LandingPage from './components/LandingPage.jsx'
+import { LandingPage } from './components/LandingPage.jsx'
 import { Home } from './views/Home.jsx';
 import { Creatures } from './views/Creatures.jsx';
 import { Equipment } from './views/Equipment.jsx';
