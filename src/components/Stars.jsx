@@ -10,7 +10,6 @@ export default (props) => {
   useFrame((state, delta) => {
     ref.current.position.x += 0.01;
     ref.current.position.y += 0.01;
-    // ref.current.position.z += 0.01;
   })
   return (
     <mesh
@@ -22,5 +21,3 @@ export default (props) => {
     </mesh>
   )
 }
-
-// #E25822

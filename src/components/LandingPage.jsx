@@ -8,6 +8,7 @@ import Shield from './Shield.jsx';
 // import ShieldControl from './ShieldControl.jsx';
 import Stars from './Stars.jsx';
 import { OrbitControls, Environment } from '@react-three/drei';
+import { Link } from 'react-router-dom';
 
 
 
@@ -46,6 +47,7 @@ export default () => {
             {Array(2500).fill().map((element, index) => <Stars key={index} />)}
         </Canvas>
         <button className="enter-button">Enter</button>
+        {/* <Link to="/Home"><button className="enter-button">Enter</button></Link> */}
     </>
     );
 }

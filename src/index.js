@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-import App from "./components/App.jsx"
+import LandingPage from "./components/LandingPage.jsx"
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Routes } from './routes.js';
 
 ReactDOM.render(
-    <App />,
+    <Router>
+        <Routes />
+    </Router>,
     document.querySelector("#root")
 );
