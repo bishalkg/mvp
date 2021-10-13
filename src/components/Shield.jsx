@@ -6,11 +6,13 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 
 export default ({url}) => {
-  const gltf = useLoader(GLTFLoader, url)
+  const gltf = useLoader(GLTFLoader, url);
+  const myShield = useRef();
 
-  const [size, setSize] = useState(1.5);
-
+  useFrame(({ clock }) => {
+    myShield.current.position.y = Math.sin(1.8 * clock.getElapsedTime()) * 0.15
+  })
   return (
-    <primitive object={gltf.scene} onClick={setSize(2.0)} scale={1.5} position={[0, 0, 0]} />
-  )
+      <primitive ref={myShield} object={gltf.scene} scale={1.5} position={[0, 0, 0]} />
+    )
 }
