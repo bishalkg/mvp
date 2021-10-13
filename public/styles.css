@@ -8,28 +8,39 @@ body {
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: black;
 }
 #root {
   height:100%;
   width: 700px;
-  background-color: black;
+  background-color:#101010;
   display: flex;
   justify-content: space-around;
 }
 
 
-#info {
+.enter-button {
+  cursor: pointer;
   position: absolute;
 	bottom: 22%;
   font-size: 50px;
   font-family: 'Gotham';
   width: 300px;
-  height: 10%;
+  height: 80px;
   text-align: center;
   color:#9ea59d;
 	z-index: 100;
-  border-radius: 15px;
+  border-radius: 35px;
   background-color: #1db95478;
+  transition: all 0.3s;
+  border: none;
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.enter-button:hover {
+  width: 312px;
+  height: 83px;
+  font-size: 53px;
+  background-color: #26d56378;
 }
 

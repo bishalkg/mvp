@@ -41,7 +41,7 @@ export default () => {
             enableZoom={false}
             />
         </Canvas>
-        <button id="info">Enter</button>
+        <button className="enter-button">Enter</button>
     </>
     );
 }
