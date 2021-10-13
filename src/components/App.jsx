@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { Suspense } from 'react'
+import { Canvas, useFrame } from '@react-three/fiber';
 
-export default function App() {
+import Shield from './Shield.jsx';
+import ShieldControl from './ShieldControl.jsx';
+
+export default () => {
     return (
-        <div>
-            <h1>React from Scratch</h1>
-        </div>
+    <Canvas>
+        <Suspense fallback={null}>
+            <Shield url="/assets/Shield1/scene.gltf"  />
+        </Suspense>
+        <ambientLight />
+        <pointLight position={[10, 10, 10]} />
+        <ShieldControl />
+    </Canvas>
     );
 }
