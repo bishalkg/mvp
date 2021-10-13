@@ -5,8 +5,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Routes } from './routes.js';
 
 ReactDOM.render(
-    <Router>
-        <Routes />
+    <Router >
+        <Routes className="routes-root"/>
     </Router>,
     document.querySelector("#root")
 );
