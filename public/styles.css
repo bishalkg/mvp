@@ -191,3 +191,31 @@ li > a:hover {
 
 }
 
+.search-bar {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap:1px;
+  margin: 10px;
+}
+
+.search-bar > input, .search-bar > button {
+  height: 50px;
+  font-size: xx-large;
+  font-family: zelda;
+  border-radius: 5px;
+}
+
+.search-bar > input {
+  width: 350px;
+}
+
+.search-bar > button {
+  width: 150px;
+  font-size: x-large;
+  cursor: pointer;
+  color: #9c1257;
+  background-color: #07076694;
+
+}
+

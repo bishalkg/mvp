@@ -3,7 +3,6 @@ import { InfoCard } from '../components/InfoCard.jsx';
 
 export const CreatureList = ({isFetching, creatures}) => {
 
-  console.log(creatures, 'list')
   return (
     <>
       {!Array.isArray(creatures) ? (<div>fetching...</div>) : (creatures.map((creature) => {

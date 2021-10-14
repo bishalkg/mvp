@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NavBar } from '../components/NavBar.jsx';
 import { CreatureList } from './CreatureList.jsx';
 import { MonsterList } from './MonsterList.jsx';
+import { SearchBar } from '../components/SearchBar.jsx';
 
 export const Creatures = props => {
   const [creaturesFood, setCreaturesFood] = useState('');
@@ -15,7 +16,6 @@ export const Creatures = props => {
       .then(({data}) => {
         setCreaturesFood(data.data.food);
         setCreaturesNonFood(data.data.non_food);
-        console.log(data.data);
         setIsFetching(false);
       })
       .catch((err) => console.log(err));
@@ -26,6 +26,7 @@ export const Creatures = props => {
   return (
     <div className="creatures-page-container">
       <NavBar />
+      <SearchBar category={'Creatures'}/>
       {toggleCreatures === 'food' ? (<CreatureList creatures={creaturesFood} isFetching={isFetching} />) : (<MonsterList monsters={creaturesNonFood} isFetching={isFetching} />)}
 
     </div>
