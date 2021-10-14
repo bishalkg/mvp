@@ -166,9 +166,22 @@ li > a:hover {
   list-style-type: none;
   font-size: 25px;
   font-family: zelda;
+  display: flex;
 }
 .info-flex {
   padding: 50px;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#monster-name {
+  font-size: 80px;
+  color: #9c1257;
+}
+
+#info-heading {
+  font-size: 33px;
+  color: #d7d211;
 
 }
 

@@ -21,7 +21,14 @@ export const Monsters = props => {
       <div className="monsters-page-container">
         <NavBar />
         <h3>Monsters View</h3>
-          <InfoCard monster={monsters[0]} isFetching={isFetching}/>
+          <InfoCard monster={monsters[0]} isFetching={isFetching} >
+            <ul className="details-container info-flex">
+              <li><em id="monster-name">{isFetching ? null : monsters[0].name}</em></li>
+              <li><em id="info-heading">Description:<br/></em>{isFetching ? null : monsters[0].description}</li>
+              <li><em id="info-heading">Common Locations:<br/> </em>{isFetching ? null : monsters[0].common_locations}</li>
+              <li><em id="info-heading">Drops:<br/> </em>{ isFetching ? null : monsters[0].drops}</li>
+            </ul>
+          </InfoCard>
         <p> This will show the Monsters</p>
       </div>
 
