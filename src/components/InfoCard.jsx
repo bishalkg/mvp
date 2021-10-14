@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 
 export const InfoCard = ({isFetching, monster, name, common_locations, description, drops, image, children}) => {
 
-  console.log(monster, 'monster');
-
   return (
       <div className="info-card-container">
         <div className="image-container info-flex">
