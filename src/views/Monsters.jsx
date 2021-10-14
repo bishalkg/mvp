@@ -1,8 +1,6 @@
 import React, { useEffect, useState, Suspense } from 'react';
 import axios from 'axios';
 import { NavBar } from '../components/NavBar.jsx';
-import { InfoCard } from '../components/InfoCard.jsx';
-import { Loader } from '../components/Loader.jsx';
 import { MonsterList } from './MonsterList.jsx';
 
 export const Monsters = props => {
@@ -20,8 +18,8 @@ export const Monsters = props => {
   return (
       <div className="monsters-page-container">
         <NavBar />
-        <h3>Monsters View</h3>
-        <MonsterList isFetching={isFetching} monsters={monsters.slice(0,10)}/>
+        {/* <h3>Monsters View</h3> */}
+        <MonsterList isFetching={isFetching} monsters={monsters}/>
       </div>
 
   );
