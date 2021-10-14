@@ -3,10 +3,9 @@ import { NavBar } from '../components/NavBar.jsx';
 
 export const Equipment = props => {
   return (
-    <div>
+    <div className="home-page-container">
       <NavBar />
-      <h3>Equipment</h3>
-      <p> This will show the Equipments </p>
+      <h3><em id="em-listen">COMING SOON...</em></h3>
     </div>
   );
 };

@@ -3,10 +3,9 @@ import { NavBar } from '../components/NavBar.jsx';
 
 export const Treasure = props => {
   return (
-    <div>
+    <div className="home-page-container">
       <NavBar />
-      <h3>Treasure View</h3>
-      <p> This will show the Treasures</p>
+      <h3><em id="em-listen">COMING SOON...</em></h3>
     </div>
   );
 };

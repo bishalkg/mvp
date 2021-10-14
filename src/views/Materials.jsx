@@ -4,11 +4,9 @@ import { SearchBar } from '../components/SearchBar.jsx';
 
 export const Materials = props => {
   return (
-    <div>
+    <div className="home-page-container">
       <NavBar />
-      <SearchBar />
-      <h3>Materials View</h3>
-      <p> This will show the Materials</p>
+      <h3><em id="em-listen">COMING SOON...</em></h3>
     </div>
   );
 };
