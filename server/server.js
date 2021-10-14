@@ -12,6 +12,6 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 
-app.listen(4000, () => {
-  console.log('connected to server at 4000');
+app.listen(3000, () => {
+  console.log('connected to server at 3000');
 });
