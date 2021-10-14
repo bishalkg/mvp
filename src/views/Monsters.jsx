@@ -51,10 +51,11 @@ export const Monsters = props => {
     return setFilteredMonsters(filterMonsters);
   }
 
+
   return (
       <div className="monsters-page-container">
         <NavBar />
-        <SearchBar category={'Monsters'} filterList={filterList} displayButton={false}/>
+        <SearchBar currCategory={'Monsters'} filterList={filterList} displayButton={false}/>
         <MonsterList isFetching={isFetching} monsters={filteredMonsters}/>
       </div>
 

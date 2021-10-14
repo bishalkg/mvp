@@ -194,9 +194,10 @@ li > a:hover {
 .search-bar {
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   gap:1px;
   margin: 10px;
+
 }
 
 .search-bar > input, .search-bar > button {

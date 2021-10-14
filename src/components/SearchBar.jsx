@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 
-export const SearchBar = ({category, filterList }) => {
+export const SearchBar = ({currCategory, otherCategory, toggleCreatures, filterList, displayButton }) => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
   const returnQueryToList = (e) => {
     e.preventDefault();
     setSearchQuery(e.target.value, filterList(e.target.value));
-
   }
+
+
 
     return (
       <form className="search-bar">
@@ -20,10 +21,11 @@ export const SearchBar = ({category, filterList }) => {
               onChange={e => returnQueryToList(e)}
               type="text"
               id="header-search"
-              placeholder={`Search ${category}...`}
+              placeholder={`Search ${currCategory}...`}
               name="s"
           />
-          <button type="submit">Find {category}</button>
+          {displayButton ? (<button onClick={toggleCreatures}>Show {otherCategory}</button>) : <></> }
+
       </form>
     );
   }

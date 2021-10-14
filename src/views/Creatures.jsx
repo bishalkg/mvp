@@ -9,7 +9,7 @@ export const Creatures = props => {
   const [creaturesFood, setCreaturesFood] = useState('');
   const [creaturesNonFood, setCreaturesNonFood] = useState('');
   const [isFetching, setIsFetching] = useState(true);
-  const [toggleCreatures, setToggleCreatures] = useState('food');
+  const [currCategory, setCurrCategory] = useState('food');
 
   const [filteredCreaturesFood, setFilteredCreaturesFood] = useState(creaturesFood);
 
@@ -31,29 +31,29 @@ export const Creatures = props => {
   const filterList = (searchQuery) => {
     // set the reference of creatures to filter
     let currCreatures = creaturesFood;
-    if (toggleCreatures !== 'food') {
+    if (currCategory !== 'food') {
       currCreatures = creaturesNonFood;
     }
     //if the searchQuery is Empty, set all creatures from the appropriate set
-    if (!searchQuery.length && toggleCreatures === 'food') {
+    if (!searchQuery.length && currCategory === 'food') {
       return setFilteredCreaturesFood(creaturesFood);
-    } else if (!searchQuery.length && toggleCreatures === 'non-food') {
+    } else if (!searchQuery.length && currCategory === 'non-food') {
       return setFilteredCreaturesNonFood(creaturesNonFood);
     }
 
+    console.log(currCategory, 'filterList');
     //filterFoodCreatures and filterNonFoodCreatures Separately
-    if (toggleCreatures === 'food') {
+    if (currCategory === 'food') {
       const filterCreatures = currCreatures.filter((creature) => {
         if (!creature.common_locations) {
           creature.common_locations = '';
         }
-        if (!creature.drops) {
-          creature.drops = '';
-        }
+        // if (!creature.hearts_recovered) {
+        //   creature.hearts_recovered = '';
+        // }
         if (creature.name.includes(searchQuery)
         || creature.description.includes(searchQuery)
         || creature.common_locations.includes(searchQuery)
-        || creature.drops.includes(searchQuery)
         ) {
           return creature;
         } else {
@@ -67,14 +67,14 @@ export const Creatures = props => {
         if (!creature.common_locations) {
           creature.common_locations = '';
         }
-        if (!creature.hearts_recovered) {
-          creature.hearts_recovered = '';
+        if (!creature.drops) {
+          creature.drops = '';
         }
 
         if (creature.name.includes(searchQuery)
         || creature.description.includes(searchQuery)
-        || creature.cooking_effect.includes(searchQuery)
-        || creature.hearts_recovered.includes(searchQuery)
+        || creature.common_locations.includes(searchQuery)
+        || creature.drops.includes(searchQuery)
         ) {
           return creature;
         } else {
@@ -84,8 +84,15 @@ export const Creatures = props => {
 
       return setFilteredCreaturesNonFood(filterCreatures);
     }
+  }
 
-
+  const toggleCreatures = (e) => {
+    e.preventDefault();
+    if (currCategory === 'food') {
+      setCurrCategory('non-food')
+    } else {
+      setCurrCategory('food');
+    }
 
   }
 
@@ -93,8 +100,14 @@ export const Creatures = props => {
   return (
     <div className="creatures-page-container">
       <NavBar />
-      <SearchBar category={'Creatures'} filterList={filterList} displayButton={true}/>
-      {toggleCreatures === 'food' ? (<CreatureList creatures={filteredCreaturesFood} isFetching={isFetching} />) : (<MonsterList monsters={filteredCreaturesNonFood} isFetching={isFetching} />)}
+      <SearchBar
+        currCategory={currCategory === 'food' ? 'food' : 'non-food'}
+        otherCategory={currCategory === 'food' ? 'non-food' : 'food'}
+        toggleCreatures={toggleCreatures}
+        filterList={filterList}
+        displayButton={true}
+      />
+      {currCategory === 'food' ? (<CreatureList creatures={filteredCreaturesFood} isFetching={isFetching} />) : (<MonsterList monsters={filteredCreaturesNonFood} isFetching={isFetching} />)}
 
     </div>
   );
