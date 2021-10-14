@@ -95,12 +95,51 @@ li > a:visited {
 }
 
 li > a {
-  font-size: 150%;
+  font-size: 170%;
   font-family: zelda;
   color: white;
 }
 
 li > a:hover {
-  font-size: 160%;
+  font-size: 180%;
 }
 
+.creatures-page-container {
+  background-image: url('./assets/dark_logo.png');
+  background-position-y: 100px;
+  height: 100%;
+  background-size: contain;
+}
+
+.home-page-container {
+  height: 100%;
+}
+
+.home-page-container > h3 {
+  color: #9c1257;
+  font-size: 50px;
+  font-family: zelda;
+  width: 1200px;
+  min-width: 800px;
+  z-index: 100;
+  position: absolute;
+  text-align: center;
+}
+
+.home-page-container #em-listen {
+  color: #d7d211;
+}
+
+.home-page-container #em-ganon {
+  color: #9c1257;
+  text-decoration: overline #9c1257;
+}
+
+.home-page-container #em-persist {
+  color: #d7d211;
+}
+
+.home-page-container #em-final-words {
+  text-decoration: underline overline #9c1257;
+  font-size: 60px;
+}

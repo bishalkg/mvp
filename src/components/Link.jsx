@@ -5,14 +5,14 @@ import { useLoader } from '@react-three/fiber'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 
 
-export const Shield = ({url}) => {
+export const Link = ({url}) => {
   const gltf = useLoader(GLTFLoader, url);
-  const myShield = useRef();
+  const myLink = useRef();
 
-  useFrame(({ clock }) => {
-    myShield.current.position.y = Math.sin(1.8 * clock.getElapsedTime()) * 0.15
-  })
+  // useFrame(({ clock }) => {
+  //   myLink.current.position.y = Math.sin(1.8 * clock.getElapsedTime()) * 0.15
+  // })
   return (
-      <primitive ref={myShield} object={gltf.scene} scale={1.5} position={[0, 0, 0]} />
+      <primitive ref={myLink} object={gltf.scene} scale={0.025} position={[0, -4.0, 0]} />
     )
 }

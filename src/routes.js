@@ -14,10 +14,8 @@ export const Routes = () => {
     <div>
       {/* <NavBar /> */}
       <Switch>
-        <Route exact path="/" component={LandingPage} >
-          {/* <Redirect to="/" /> */}
-        </Route>
-        <Route exact path="/Home" component={Home} />
+        <Route exact path="/LandingPage" component={LandingPage} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/Creatures" component={Creatures} />
         <Route exact path="/Equipment" component={Equipment} />
         <Route exact path="/Materials" component={Equipment} />
