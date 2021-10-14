@@ -18,17 +18,12 @@ export const Monsters = props => {
   }, []);
   const { name, common_locations, description, drops, image } = monsters;
   return (
-    <>
-
-      {isFetching ? (<div>retreiving mosters...</div>) :
-      (<div className="monsters-page-container">
+      <div className="monsters-page-container">
         <NavBar />
         <h3>Monsters View</h3>
-          <InfoCard monster={monsters[0]}/>
+          <InfoCard monster={monsters[0]} isFetching={isFetching}/>
         <p> This will show the Monsters</p>
-      </div>)}
-
-    </>
+      </div>
 
   );
 };

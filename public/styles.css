@@ -147,7 +147,9 @@ li > a:hover {
 }
 
 .info-card-container {
-  width: 90%;
+  min-width: 900px;
+  width: 1150px;
+  max-width: 1200px;
   border-radius: 15px;
   color: #9ea59d;
   height: 500px;
@@ -155,5 +157,18 @@ li > a:hover {
   align-self: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.details-container {
+  max-width: 60%;
+  list-style-type: none;
+  font-size: 25px;
+  font-family: zelda;
+}
+.info-flex {
+  padding: 50px;
+
 }
 
