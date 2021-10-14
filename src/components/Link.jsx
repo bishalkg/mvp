@@ -13,6 +13,6 @@ export const Link = ({url}) => {
   //   myLink.current.position.y = Math.sin(1.8 * clock.getElapsedTime()) * 0.15
   // })
   return (
-      <primitive ref={myLink} object={gltf.scene} scale={0.025} position={[0, -4.0, 0]} />
+      <primitive ref={myLink} object={gltf.scene} scale={0.025} position={[0, -4.5, 0]} />
     )
 }

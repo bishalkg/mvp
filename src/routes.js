@@ -14,13 +14,13 @@ export const Routes = () => {
     <div>
       {/* <NavBar /> */}
       <Switch>
-        <Route exact path="/LandingPage" component={LandingPage} />
-        <Route exact path="/" component={Home} />
+        <Route exact path="/poo" component={LandingPage} />
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/Creatures" component={Creatures} />
         <Route exact path="/Equipment" component={Equipment} />
-        <Route exact path="/Materials" component={Equipment} />
-        <Route exact path="/Monsters" component={Equipment} />
-        <Route exact path="/Treasure" component={Equipment} />
+        <Route exact path="/Materials" component={Materials} />
+        <Route exact path="/" component={Monsters} />
+        <Route exact path="/Treasure" component={Treasure} />
       </Switch>
     </div>
   );

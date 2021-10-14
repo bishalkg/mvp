@@ -104,11 +104,13 @@ li > a:hover {
   font-size: 180%;
 }
 
-.creatures-page-container {
+.monsters-page-container {
   background-image: url('./assets/dark_logo.png');
   background-position-y: 100px;
   height: 100%;
   background-size: contain;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-page-container {
@@ -116,7 +118,7 @@ li > a:hover {
 }
 
 .home-page-container > h3 {
-  color: #9c1257;
+  color: #d7d211;
   font-size: 50px;
   font-family: zelda;
   width: 1200px;
@@ -136,10 +138,22 @@ li > a:hover {
 }
 
 .home-page-container #em-persist {
-  color: #d7d211;
+  color: #9c1257;
 }
 
 .home-page-container #em-final-words {
   text-decoration: underline overline #9c1257;
   font-size: 60px;
 }
+
+.info-card-container {
+  width: 90%;
+  border-radius: 15px;
+  color: #9ea59d;
+  height: 500px;
+  background-color:#07076694;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
