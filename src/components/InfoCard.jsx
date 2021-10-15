@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FadeInSection } from './FadeInSection.jsx';
 
 
 export const InfoCard = ({isFetching, monster, creature, children}) => {
@@ -9,7 +10,8 @@ export const InfoCard = ({isFetching, monster, creature, children}) => {
     image = creature.image;
   }
   return (
-      <div className="info-card-container">
+      <FadeInSection className="info-card-container">
+        <div className="info-card-container">
         <div className="image-container info-flex">
           <img width="300" heigh="300" src={isFetching ? null : image}></img>
         </div>
@@ -20,6 +22,7 @@ export const InfoCard = ({isFetching, monster, creature, children}) => {
           <li>Common Locations:{isFetching ? null : monster.common_locations}</li>
           <li>Drops:{ isFetching ? null : monster.drops}</li>
         </ul> */}
-    </div>
+        </div>
+      </FadeInSection >
   )
 }

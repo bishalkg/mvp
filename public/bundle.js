@@ -392,6 +392,17 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 
 /***/ }),
 
+/***/ "./src/components/FadeInSection.jsx":
+/*!******************************************!*\
+  !*** ./src/components/FadeInSection.jsx ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"FadeInSection\": () => (/* binding */ FadeInSection)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nconst FadeInSection = props => {\n  const [isVisible, setVisible] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false);\n  const domRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {\n    const observer = new IntersectionObserver(entries => {\n      entries.forEach(entry => {\n        console.log(`entry`, entry, `is = ${entry.isIntersecting}`);\n        setVisible(entry.isIntersecting);\n      });\n    });\n    const {\n      current\n    } = domRef;\n    observer.observe(current);\n    return () => observer.unobserve(current);\n  }, []);\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: `fade-in-section ${isVisible ? \"is-visible\" : \"\"}`,\n    ref: domRef\n  }, props.children);\n};\n\n//# sourceURL=webpack://mvp/./src/components/FadeInSection.jsx?");
+
+/***/ }),
+
 /***/ "./src/components/InfoCard.jsx":
 /*!*************************************!*\
   !*** ./src/components/InfoCard.jsx ***!
@@ -399,7 +410,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"InfoCard\": () => (/* binding */ InfoCard)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nconst InfoCard = ({\n  isFetching,\n  monster,\n  creature,\n  children\n}) => {\n  let image = '';\n\n  if (!creature) {\n    image = monster.image;\n  } else {\n    image = creature.image;\n  }\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"info-card-container\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"image-container info-flex\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n    width: \"300\",\n    heigh: \"300\",\n    src: isFetching ? null : image\n  })), children);\n};\n\n//# sourceURL=webpack://mvp/./src/components/InfoCard.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"InfoCard\": () => (/* binding */ InfoCard)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var _FadeInSection_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FadeInSection.jsx */ \"./src/components/FadeInSection.jsx\");\n\n\nconst InfoCard = ({\n  isFetching,\n  monster,\n  creature,\n  children\n}) => {\n  let image = '';\n\n  if (!creature) {\n    image = monster.image;\n  } else {\n    image = creature.image;\n  }\n\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_FadeInSection_jsx__WEBPACK_IMPORTED_MODULE_1__.FadeInSection, {\n    className: \"info-card-container\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"info-card-container\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"image-container info-flex\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n    width: \"300\",\n    heigh: \"300\",\n    src: isFetching ? null : image\n  })), children));\n};\n\n//# sourceURL=webpack://mvp/./src/components/InfoCard.jsx?");
 
 /***/ }),
 
