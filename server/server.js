@@ -7,9 +7,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// app.get('/', (req, res) => {
-//   res.send('Server says hello!');
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+});
 
 
 app.listen(9000, () => {
